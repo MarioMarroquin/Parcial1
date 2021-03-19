@@ -15,15 +15,29 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 */
 
 // CREA TU FUNCION mayusculas aqui:
-
-
+function mayusculas(nombres) {
+  let nombresM = nombres.map(nombres => nombres.toUpperCase());
+  console.log(nombresM);
+}
 
 /*
 ### F2 Crea una funcion llamada numVocales que reciba como parámetro un arreglo y cuente el numero de vocales de cada elemento y escriba en consola "datos: tiene [x] vocales , para cada elemento del arreglo" 
 */
 
 // CREA TU FUNCION numVocales aqui:
+function numVocales(arr) {
+  const vocalesmin = ["a", "e", "i", "o", "u"]
+  const vocalesmay = ["A", "E", "I", "O", "U"]
+  var num = 0;
 
+  for (let i of arr) {
+        if (vocalesmin.includes(i) || vocalesmay.includes(i)) {
+            num++;
+        }
+    }
+
+    console.log(num)
+}
 
 /*
 ### F3 Crea una funcion llamada numVocalesArr que reciba un arreglo y mande llamar a la funcion numVocales para que escriba la longitud de cada elemento del arreglo." 
@@ -31,7 +45,12 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 
 // CREA TU FUNCION numVocalesArr aqui:
 
-
+function numVocalesArr(arr) {
+  for (var i = 0; i < arr.length;i++) {
+    var arr2 = numVocales(arr[i]);
+  }
+  console.log(arr2)
+}
 
 
 
@@ -45,11 +64,24 @@ A) Define un objeto tipo "Perro" que reciba 3 parametros
 3) Raza
 
 
+
 B) Crea 3 objectos  con diferentes valores
 
-C) Con un console.log escribe el nombre del primer objeto, el color del segundo, y la raza del tercero. Lo puedes hacer en una sola línea o en 3 lineas aparte. 
+C) Con un console.log escribe el nombre del primer objeto, el color del segundo, y la raza del tercero. Lo puedes hacer en una sola línea o en 3 lineas aparte. */
 
+function Perro(Nombre, Color, Raza) {
+    this.Nombre = Nombre;
+    this.Color = Color;
+    this.Raza = Raza;
+}
 
+var Perro1 = new Perro('lolo1', 'rosa1', 'Shitzu1');
+var Perro2 = new Perro('sadf', 'morado', 'chihuahua');
+var Perro3 = new Perro('lpaz', 'negro', 'boxer');
+
+console.log(`Nombre ${Perro1.Nombre} Color ${Perro2.Color} Raza ${Perro3.Raza}  `)
+
+/*
 *****BONUS****
 
 Crea una método en la definición del objeto "Perro" llamado printInfo()  que escriba en consola todas las propiedades del objeto que lo invoca. 
@@ -74,13 +106,13 @@ Deberia escribir en consola
  ***/
 
 // F1
-
+mayusculas(nombres)
 
 // F2
-
+numVocales("lol")
 
 // F3
-
+numVocalesArr(nombres)
 
 
 
@@ -89,6 +121,8 @@ Deberia escribir en consola
  *        PRUEBA TUS OBJETOS
  * 
  ***/
+
+
 
 
 </script>
